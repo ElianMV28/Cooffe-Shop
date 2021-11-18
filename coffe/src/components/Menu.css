@@ -1,0 +1,51 @@
+/* Variables de colores */
+:root {
+    --color-rosa: #8FA01F;
+    --color-purpura: #1D741B;
+    --color-azul: #8BCD50;
+    --color-celeste: #DED93E;
+    --color-blanco: white;
+  }
+  
+  
+  
+  .Menu {
+    background-color: var(--color-purpura);
+    box-shadow: 0 2px 5px 0 var(--color-rosa);
+    margin-bottom: 16px;
+  }
+  
+  .Menu ul {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .Menu li {
+    color: var(--color-blanco);
+    display: inline-block;
+    font-size: 14;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  
+  .Menu li a {
+    color: var(--color-azul);
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    outline: 0;
+    padding: 10px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  .Menu li:hover a {
+    background-color: var(--color-celeste);
+    color: white;
+  }
+  

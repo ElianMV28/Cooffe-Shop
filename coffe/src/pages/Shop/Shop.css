@@ -2,13 +2,24 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    padding:10px;
 }
 
 .tableShop {
     width: 500px;
+    padding:40px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    flex-direction: row;
 }
 
 .buttonImage {
     width: 30px;
     height: 25px;
+}
+
+.shopping {
+    padding: 40px;
 }

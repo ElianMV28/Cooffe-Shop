@@ -1,3 +1,14 @@
+.contentTable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .tableShop {
     width: 500px;
+}
+
+.buttonImage {
+    width: 30px;
+    height: 25px;
 }

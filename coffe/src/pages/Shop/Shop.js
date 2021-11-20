@@ -34,7 +34,7 @@ export function Shop() {
   };
 
 
-  const listTotal = listBuy.map((produc) => {
+  const listTotal = listBuy.map(produc => {
     if (produc.price < offerHigherThan.price) return produc;
 
     return {
@@ -51,7 +51,7 @@ export function Shop() {
 
 
 
-  console.log(amountTotal);
+  
   return (
     <>
       <Menu />

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Table, Button } from "react-bootstrap";
+import { Table, Button} from "react-bootstrap";
 import { Menu } from "../../components";
+import Swal from 'sweetalert2'
 import "./Shop.css";
 
 const store = [
@@ -14,7 +15,7 @@ const store = [
   { name: "Sanwhich", price: 250 },
   { name: "Chocolate", price: 150 },
 ];
-const offerHigherThan = { price: 100 };
+
 const combos = [
   {
     combo: "combo1",
@@ -44,9 +45,11 @@ export function Shop() {
   const [ShowTotal, setShowTotal] = useState(initialState);
   const [listBuy, setListBuy] = useState(initialStateList);
   const [listCombos, setListCombos] = useState(combos);
+  const [carrito, setCarrito] = useState(true);
 
   const handleOnClick = (element) => {
     setListBuy([...listBuy, element]);
+    setCarrito(false)
     setShowTotal(true);
     let listChanges = [];
     if (!element.disabled) {
@@ -62,14 +65,21 @@ export function Shop() {
     setListCombos(listChanges);
   };
 
-  // const listTotal = listBuy.map((produc) => {
-  //   if (produc.price < offerHigherThan.price) return produc;
+  const handleOnClickCarrito =()=>{
+    setCarrito(true)
+   
 
-  //   return {
-  //     ...produc,
-  //     price: produc.price - produc.price * 0.1,
-  //   };
-  // });
+    Swal.fire({
+      icon: 'success',
+      title:`Su compra sera entregada en breve! Total: $ ${amountTotal}`,
+      text:`${listBuy.map((item)=> item.name)}`
+      
+      
+    })
+    setListBuy(initialStateList)
+    setListCombos(combos)
+    setShowTotal(initialState)
+  }
 
   const amountTotal = listBuy.reduce((element, number) => {
     return element + number.price;
@@ -79,6 +89,19 @@ export function Shop() {
     <>
       <Menu />
       <h1>Cofee Shopp</h1>
+      <div className="compra">
+        <h2>amountTotal: {amountTotal}  </h2>
+        
+        
+        <Button
+          type="submit"
+          disabled={carrito}
+          onClick={() => handleOnClickCarrito()}
+          variant="success"
+        >
+          carrito
+        </Button>
+      </div>
       <div className="contentTable">
         <div>
           {" "}
@@ -99,45 +122,39 @@ export function Shop() {
                       type="submit"
                       disabled={element.disabled}
                       onClick={() => handleOnClick(element)}
-                      variant="outline-warning"
+                      variant="warning"
                     >
                       {element.name}
                     </Button>
                     
                   </th>
-                  <th>{element.price}</th>
+                  <th>${element.price}</th>
                 </tr>
               ))}
             </tbody>
           </Table>
           {ShowTotal && (
             <div className="shopping">
-              <Table responsive="sm">
-                <thead>
-                  <tr>
-                    <th>Shopping</th>
-                    <th>Price</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {listBuy.map((element) => (
+                 <h3>Your shopping cart</h3>
+                <Table  responsive="sm">
+                  <thead>
                     <tr>
-                      <th>{element.name}</th>
-                      <th>${element.price}</th>
+                      <th>Shopping</th>
+                      <th>Price</th>
                     </tr>
-                  ))}
-                  <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                  </tr>
-                  <tr>
-                    <th>Amount Total</th>
-                    <th>{amountTotal}</th>
-                  </tr>
-                </tbody>
-              </Table>
+                  </thead>
+                  <tbody>
+                    {listBuy.map((element) => (
+                      <tr>
+                        <th>{element.name}</th>
+                        <th>${element.price}</th>
+                      </tr>
+                    ))}
+                  
+                  </tbody>
+                </Table>
+                
+             
             </div>
           )}
         </div>

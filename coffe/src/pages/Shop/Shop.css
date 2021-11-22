@@ -1,13 +1,33 @@
+body{
+    background-image: url('../../images/coffee-g5955b2ba0_1920.jpg');
+    background-size: cover;
+    /* filter: blur(6px); */
+    backdrop-filter: blur(8px);
+    height: 100vh;
+    background-repeat: no-repeat;
+    color:white;
+}
+
+tbody,th, tr {
+    color:white;
+    
+}
+
 .contentTable {
+    color:white;
     display: flex;
     align-items:flex-start;
     justify-content: space-around;
     flex-direction: row;
+    margin:20px;
+    padding:20px;
     
 }
 
 .tableShop {
     width: 500px;
+    color:white;
+   
     
     display: flex;
     align-items: center;
@@ -16,6 +36,7 @@
 }
 
 .listStore { 
+    color:white;
     display: flex;
     align-items:flex-start;
     justify-content: center;
@@ -28,5 +49,20 @@
 }
 
 .shopping {
-    padding: 40px;
+    padding: 20px;
+    border: solid 1px white;
+    border-radius: 10px;
+    background: black;
+    opacity: 0.9;
+}
+
+.compra h2 {
+    padding-right: 5%;
+}
+
+.compra{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 5%;
 }

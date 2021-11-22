@@ -4,21 +4,37 @@ import { Menu } from "../../components";
 import "./Shop.css";
 
 const store = [
-  { Name: "French fries", price: 125 },
-  { Name: "Cafe", price: 50 },
-  { Name: "Cortado", price: 55 },
-  { Name: "Capuccino", price: 60 },
-  { Name: "Te", price: 50 },
-  { Name: "Agua", price: 80 },
-  { Name: "Gaseosa", price: 85 },
-  { Name: "Sanwhich", price: 250 },
-  { Name: "Chocolate", price: 150 },
+  { name: "French fries", price: 125 },
+  { name: "Cafe", price: 50 },
+  { name: "Cortado", price: 55 },
+  { name: "Capuccino", price: 60 },
+  { name: "Te", price: 50 },
+  { name: "Agua", price: 80 },
+  { name: "Gaseosa", price: 85 },
+  { name: "Sanwhich", price: 250 },
+  { name: "Chocolate", price: 150 },
 ];
 const offerHigherThan = { price: 100 };
-const combo = {
-  combo1: ["Gaseosa", "French fries"],
-  combo2: ["Sanwhich", "Gaseosa"],
-};
+const combos = [
+  {
+    combo: "combo1",
+    name: "Gaseosa + Sandwich",
+    price: 300,
+    disabled: false,
+  },
+  {
+    combo: "combo2",
+    name: "Cafe + Medialuna",
+    price: 60,
+    disabled: false,
+  },
+  {
+    combo: "combo3",
+    name: "Chocolate + Medialuna",
+    price: 160,
+    disabled: false,
+  },
+];
 
 const initialState = false;
 
@@ -27,69 +43,75 @@ const initialStateList = [];
 export function Shop() {
   const [ShowTotal, setShowTotal] = useState(initialState);
   const [listBuy, setListBuy] = useState(initialStateList);
+  const [listCombos, setListCombos] = useState(combos);
 
   const handleOnClick = (element) => {
     setListBuy([...listBuy, element]);
     setShowTotal(true);
+    let listChanges = [];
+    if (!element.disabled) {
+      listChanges = listCombos.map((product) => {
+        if (product.name !== element.name) return product;
+
+        return {
+          ...product,
+          disabled: true,
+        };
+      });
+    }
+    setListCombos(listChanges);
   };
 
+  // const listTotal = listBuy.map((produc) => {
+  //   if (produc.price < offerHigherThan.price) return produc;
 
-  const listTotal = listBuy.map(produc => {
-    if (produc.price < offerHigherThan.price) return produc;
+  //   return {
+  //     ...produc,
+  //     price: produc.price - produc.price * 0.1,
+  //   };
+  // });
 
-    return {
-      ...produc,
-      price: produc.price - produc.price * 0.1,
-    };
-  });
+  const amountTotal = listBuy.reduce((element, number) => {
+    return element + number.price;
+  }, 0);
 
-
-
-   const amountTotal = listTotal.reduce((element,number) => {
-    return element + number.price
-   },0)
-
-
-
-  
   return (
     <>
       <Menu />
-      <div className="contentTable">
       <h1>Cofee Shopp</h1>
-        <div className="tableShop">
-          
+      <div className="contentTable">
+        <div>
+          {" "}
+          <h2> Combos</h2>
           <Table responsive="sm">
             <thead>
               <tr>
-                <th>Stock</th>
+                <th>Combo</th>
                 <th>Price</th>
-                <th></th>
+               
               </tr>
             </thead>
             <tbody>
-              {store.map((element) => (
+              {listCombos.map((element) => (
                 <tr>
-                  <th>{element.Name}</th>
-                  <th>${element.price}</th>
-                  
                   <th>
-                    <Button variant="outline-primary">
-                      <img
-                        src="./assets/agregar-carrito.png"
-                       alt='button'
-                        className="buttonImage"
-                        onClick={() => handleOnClick(element)}
-                      />
-                    </Button>{" "}
+                    <Button
+                      type="submit"
+                      disabled={element.disabled}
+                      onClick={() => handleOnClick(element)}
+                      variant="outline-warning"
+                    >
+                      {element.name}
+                    </Button>
+                    
                   </th>
+                  <th>{element.price}</th>
                 </tr>
               ))}
             </tbody>
           </Table>
           {ShowTotal && (
-            <div className='shopping'>
-                
+            <div className="shopping">
               <Table responsive="sm">
                 <thead>
                   <tr>
@@ -99,27 +121,61 @@ export function Shop() {
                   </tr>
                 </thead>
                 <tbody>
-                  {listTotal.map((element) => (
+                  {listBuy.map((element) => (
                     <tr>
-                      <th>{element.Name}</th>
+                      <th>{element.name}</th>
                       <th>${element.price}</th>
-                     
                     </tr>
                   ))}
                   <tr>
-                  <th></th>
                     <th></th>
-                    <th></th></tr> 
+                    <th></th>
+                    <th></th>
+                  </tr>
                   <tr>
-                      
-                  <th>Amount Total</th>
+                    <th>Amount Total</th>
                     <th>{amountTotal}</th>
-                    
                   </tr>
                 </tbody>
               </Table>
             </div>
           )}
+        </div>
+
+        <div className="listStore">
+          <h2>List Store</h2>
+          <div className="tableShop">
+            <Table responsive="sm">
+              <thead>
+                <tr>
+                  <th>Stock</th>
+                  <th>Price</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {store.map((element) => (
+                  <tr>
+                    <th>{element.name}</th>
+                    <th>${element.price}</th>
+
+                    <th>
+                      <Button variant="outline-primary">
+                        <img
+                          src="./assets/agregar-carrito.png"
+                          alt="button"
+                          className="buttonImage"
+                          onClick={() => handleOnClick(element)}
+                        />
+                      </Button>{" "}
+                    </th>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+          </div>
+
+         
         </div>
       </div>
     </>

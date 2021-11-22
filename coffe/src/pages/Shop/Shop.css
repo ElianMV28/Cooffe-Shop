@@ -1,18 +1,25 @@
 .contentTable {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding:10px;
+    align-items:flex-start;
+    justify-content: space-around;
+    flex-direction: row;
+    
 }
 
 .tableShop {
     width: 500px;
-    padding:40px;
+    
     display: flex;
     align-items: center;
     justify-content:space-between;
     flex-direction: row;
+}
+
+.listStore { 
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .buttonImage {

@@ -3,18 +3,25 @@ import { Table, Button} from "react-bootstrap";
 import { Menu } from "../../components";
 import Swal from 'sweetalert2'
 import "./Shop.css";
+import Footer from "../../components/Footer/Footer";
 
-const store = [
+const storeMinutas = [
   { name: "French fries", price: 125 },
+  { name: "Sanwhich", price: 250 },
+  { name: "Media Lunas", price: 150 },
+  { name: "Hamburguesa", price: 150 },
+  
+];
+
+const storeDrinks = [
   { name: "Cafe", price: 50 },
   { name: "Cortado", price: 55 },
   { name: "Capuccino", price: 60 },
   { name: "Te", price: 50 },
   { name: "Agua", price: 80 },
   { name: "Gaseosa", price: 85 },
-  { name: "Sanwhich", price: 250 },
   { name: "Chocolate", price: 150 },
-];
+]
 
 const combos = [
   {
@@ -171,7 +178,35 @@ export function Shop() {
                 </tr>
               </thead>
               <tbody>
-                {store.map((element) => (
+                {storeMinutas.map((element) => (
+                  <tr>
+                    <th>{element.name}</th>
+                    <th>${element.price}</th>
+
+                    <th>
+                      <Button variant="outline-primary">
+                        <img
+                          src="./assets/agregar-carrito.png"
+                          alt="button"
+                          className="buttonImage"
+                          onClick={() => handleOnClick(element)}
+                        />
+                      </Button>{" "}
+                    </th>
+                  </tr>
+                ))}
+              </tbody>
+            </Table>
+            <Table responsive="sm">
+              <thead>
+                <tr>
+                  <th>Stock</th>
+                  <th>Price</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {storeDrinks.map((element) => (
                   <tr>
                     <th>{element.name}</th>
                     <th>${element.price}</th>
@@ -195,6 +230,7 @@ export function Shop() {
          
         </div>
       </div>
+      <Footer/>
     </>
   );
 }

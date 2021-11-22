@@ -1,12 +1,7 @@
-body{
-    background-image: url('../../images/coffee-g5955b2ba0_1920.jpg');
-    background-size: cover;
-    /* filter: blur(6px); */
-    backdrop-filter: blur(8px);
-    height: 100vh;
-    background-repeat: no-repeat;
-    color:white;
+body {
+    color: white;
 }
+
 
 tbody,th, tr {
     color:white;
@@ -21,26 +16,28 @@ tbody,th, tr {
     flex-direction: row;
     margin:20px;
     padding:20px;
+    flex-wrap: wrap;
     
 }
 
 .tableShop {
+    border: solid 1px white;
+    border-radius: 10px;
     width: 500px;
     color:white;
-   
-    
     display: flex;
-    align-items: center;
-    justify-content:space-between;
+    align-items:flex-start;
+    justify-content:space-around;
     flex-direction: row;
 }
 
 .listStore { 
     color:white;
     display: flex;
-    align-items:flex-start;
+    align-items:center;
     justify-content: center;
     flex-direction: column;
+    
 }
 
 .buttonImage {
@@ -65,4 +62,37 @@ tbody,th, tr {
     flex-direction: row;
     justify-content: flex-end;
     margin-right: 5%;
+}
+
+@media (max-width: 1400px) {
+
+    body{
+        background-size: auto;
+        height: 100vh;
+        background-repeat: no-repeat;
+        color:white;
+    }
+}
+@media (max-width: 900px) {
+
+    .contentTable {
+        width: 200px;
+        display: flex;
+        align-items:flex-start;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        flex-direction: column;
+        }
+    .tableShop {
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        flex-direction: column;
+        width: 300px;
+        margin:0;
+        padding:0;
+        padding-bottom: 3%;
+    }
+    
+    
 }

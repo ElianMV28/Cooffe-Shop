@@ -1,0 +1,55 @@
+/* Variables de colores */
+:root {
+    --color-rosa: #8FA01F;
+    --color-purpura: #1D741B;
+    --color-azul: #8BCD50;
+    --color-celeste: #DED93E;
+    --color-blanco: white;
+  }
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@800&display=swap');
+
+  .menu {
+    background-color: black;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 5px 0 #00000042;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
+  }
+  
+  .menu ul {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    color: #def1f0;
+    display: inline-block;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 14;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-decoration: none;
+    padding: 10px 16px;
+    letter-spacing: 0.5px;
+  }
+  
+.item-link {
+  text-decoration: none;
+  list-style-type: none;
+  list-style-type: none;
+}
+
+#img-logo {
+    width: 40px;
+    height: 40px;
+} 
+  
+  
+  

@@ -1,15 +1,26 @@
-
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  
+} from 'react-router-dom';
 import './App.css';
-import Menu from './components/Menu';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Carrousel } from './components/Carousel';
+
+import { Home, NotFound } from './pages';
+import { Shop } from './pages'
 
 
 function App() {
   return (
     <div className="App">
-      <Menu />
-      <Carrousel />
+      <BrowserRouter>
+        <Routes>
+          <Route exact strict path="/" element={<Home />} />
+          <Route exact strict path="/shop" element={<Shop />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

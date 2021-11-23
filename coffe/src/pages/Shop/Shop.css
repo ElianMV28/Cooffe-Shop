@@ -1,0 +1,98 @@
+body {
+    color: white;
+}
+
+
+tbody,th, tr {
+    color:white;
+    
+}
+
+.contentTable {
+    color:white;
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-around;
+    flex-direction: row;
+    margin:20px;
+    padding:20px;
+    flex-wrap: wrap;
+    
+}
+
+.tableShop {
+    border: solid 1px white;
+    border-radius: 10px;
+    width: 500px;
+    color:white;
+    display: flex;
+    align-items:flex-start;
+    justify-content:space-around;
+    flex-direction: row;
+}
+
+.listStore { 
+    color:white;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.buttonImage {
+    width: 30px;
+    height: 25px;
+}
+
+.shopping {
+    padding: 20px;
+    border: solid 1px white;
+    border-radius: 10px;
+    background: black;
+    opacity: 0.9;
+}
+
+.compra h2 {
+    padding-right: 5%;
+}
+
+.compra{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 5%;
+}
+
+@media (max-width: 1400px) {
+
+    body{
+        background-size: auto;
+        height: 100vh;
+        background-repeat: no-repeat;
+        color:white;
+    }
+}
+@media (max-width: 900px) {
+
+    .contentTable {
+        width: 200px;
+        display: flex;
+        align-items:flex-start;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        flex-direction: column;
+        }
+    .tableShop {
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        flex-direction: column;
+        width: 300px;
+        margin:0;
+        padding:0;
+        padding-bottom: 3%;
+    }
+    
+    
+}

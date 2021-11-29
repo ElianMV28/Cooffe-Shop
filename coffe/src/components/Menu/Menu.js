@@ -1,30 +1,46 @@
-
 import "./Menu.css";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import React from "react";
-
-
-
 
 export function Menu() {
   return (
-    <div className='menu'>
-        <ul>
-          <li className='item'>
-          <Link className='item-link' to="/">Home</Link>
+    <div className="menu">
+      <ul>
+        <div>
+          <li>
+            <img id="img-logo" alt="logo" src="./assets/Captura.PNG" />
           </li>
-        
-          <li className='item'>
-            <Link className='item-link' to="/shop">Shop</Link>
-            </li>
-            <li>
-              <img id='img-logo' alt='logo' src='./assets/Captura.PNG'/>
-            </li>
-          </ul>
-          
-       
-     
+        </div>
+        <div>
+          <li className="item">
+            <Link className="item-link" to="/">
+              Home
+            </Link>
+          </li>
+          <li className="item">
+            <Link className="item-link" to="/">
+              Home
+            </Link>
+          </li>
+          <li className="item">
+            <Link className="item-link" to="/">
+              Home
+            </Link>
+          </li>
+          <li className="item">
+            <Link className="item-link" to="/">
+              Home
+            </Link>
+          </li>
+        </div>
+        <div>
+        <li className="item">
+          <Link className="item-link" to="/shop">
+            Shop
+          </Link>
+        </li>
+        </div>
+      </ul>
     </div>
   );
 }
-

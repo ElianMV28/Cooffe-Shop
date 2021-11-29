@@ -1,27 +1,13 @@
-body{
-  background-image: url('./images/coffee-g5955b2ba0_1920.jpg');
-  background-size: cover;
-  
-  backdrop-filter: blur(8px);
-  height: 100vh;
 
-  background-repeat: no-repeat;
-  color:white;
- 
-}
 
 .App {
   text-align: center;
 }
 
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
+
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -30,18 +16,9 @@ body{
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
+} */
+/* 
 .App-link {
   color: #61dafb;
-}
+} */
 
-@media (max-width: 900px) {
-  body{
-       
-    background-size: auto;
-    backdrop-filter: none;
-    background-repeat: repeat;
-    color:white;
-}
-}

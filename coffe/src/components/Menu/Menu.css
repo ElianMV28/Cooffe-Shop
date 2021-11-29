@@ -10,20 +10,24 @@
 
   .menu {
     background-color: black;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 5px 0 #00000042;
+    /* backdrop-filter: blur(10px); */
+    /* box-shadow: 0 2px 5px 0 #00000042; */
     margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: 20px;
+    
+    /* align-items: center; */
+    
+    
+    /* padding-right: 20px; */
   }
   
   .menu ul {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+    
   }
   
   .menu li {

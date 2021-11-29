@@ -14,12 +14,12 @@ const storeMinutas = [
 ];
 
 const storeDrinks = [
-  { name: "Cafe", price: 50 },
+  { name: "Cafe", price: 50 , combos:{name:'combo2'}},
   { name: "Cortado", price: 55 },
   { name: "Capuccino", price: 60 },
   { name: "Te", price: 50 },
   { name: "Agua", price: 80 },
-  { name: "Gaseosa", price: 85 },
+  { name: "Gaseosa", price: 85, combos:{name:'combo1'} },
   { name: "Chocolate", price: 150 },
 ]
 
@@ -92,8 +92,12 @@ export function Shop() {
     return element + number.price;
   }, 0);
 
+  
+
   return (
     <>
+      
+      <div className='container-shop'>
       <Menu />
       <h1>Cofee Shopp</h1>
       <div className="compra">
@@ -231,6 +235,7 @@ export function Shop() {
         </div>
       </div>
       <Footer/>
+      </div>
     </>
   );
 }

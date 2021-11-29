@@ -7,10 +7,12 @@ import './Home.css';
 export function Home() {
   return (
     <>
+    
+      <div className='home'>
       <Menu />
       <h1>WELCOME</h1>
     <div className='img-text'>
-        <Image className='img-home' src="./assets/img_home.jpg" rounded />
+        {/* <Image className='img-home' src="./assets/img_home.jpg" rounded /> */}
 
      <div className='text'>
       <p>Coffee is a brewed drink prepared from roasted coffee beans, 
@@ -20,8 +22,10 @@ export function Home() {
         roasted coffee, which is ground into fine particles that are typically steeped in hot water before being filtered out, producing a cup of coffee.</p>
         </div>
      </div>
-     <Footer/>
+     
       <div className='icon-d'>Iconos diseñados por <a href="https://www.flaticon.es/autores/andrean-prabowo" title="Andrean Prabowo">Andrean Prabowo</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+      <Footer/>
+      </div>
     </>
   );
 }

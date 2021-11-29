@@ -1,5 +1,12 @@
-body {
-    color: white;
+.container-shop {
+    background-image: url('../../images/coffee-g5955b2ba0_1920.jpg');
+    background-size: cover;
+  
+  /* backdrop-filter: blur(8px); */
+  
+
+  background-repeat: no-repeat;
+  color:white;
 }
 
 
@@ -64,15 +71,6 @@ tbody,th, tr {
     margin-right: 5%;
 }
 
-@media (max-width: 1400px) {
-
-    body{
-        background-size: auto;
-        height: 100vh;
-        background-repeat: no-repeat;
-        color:white;
-    }
-}
 @media (max-width: 900px) {
 
     .contentTable {

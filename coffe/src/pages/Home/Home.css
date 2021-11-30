@@ -1,17 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 .home {
-    background-image: url('../../images/cup-g2fce2243d_1920.jpg');
-    background-size: cover;
-    background-position-y: -1000px;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    
     height: 100vh;
+    /* background-position-x: 100px; */
+    
+}
+
+
+.text-coffee {
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    
+}
+.text-coffee p {
+    width: 500px;
 }
 
 .text {
-    width: 500px;
-    color: white;
-}
-.home h1 {
-    color: white;
-    padding: 10px;
+    width: 100%;
+    color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-family:'Anton', sans-serif; ;
+    font-size: 300px;
+    font-weight: bold;
+    -webkit-text-stroke: 0.5px red;
+    background-image: url('../../images/coffee-g5955b2ba0_1920.jpg');
+    background-size: cover;
+    background-position-y:-300px;
+    background-clip: text;
 }
 
 
@@ -24,16 +47,8 @@
     height:50px; /*alto del div*/
     z-index:0;
     color: white;
-
-
 }
 
 
-.img-text {
-    
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-}
+
 

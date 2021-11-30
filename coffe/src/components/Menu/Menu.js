@@ -19,19 +19,15 @@ export function Menu() {
           </li>
           <li className="item">
             <Link className="item-link" to="/">
-              Home
+              About us
             </Link>
           </li>
           <li className="item">
             <Link className="item-link" to="/">
-              Home
+              Contact us
             </Link>
           </li>
-          <li className="item">
-            <Link className="item-link" to="/">
-              Home
-            </Link>
-          </li>
+          
         </div>
         <div>
         <li className="item">

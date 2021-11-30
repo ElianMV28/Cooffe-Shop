@@ -4,15 +4,32 @@
   
   /* backdrop-filter: blur(8px); */
   
-
-  background-repeat: no-repeat;
+  
   color:white;
 }
 
+.container-divs {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    
+}
 
 tbody,th, tr {
     color:white;
     
+}
+
+.carrito {
+    margin-top: 20px;
+    border-left: 1px solid red;
+    width: 300px;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    background: black;
+    opacity: 0.9;
+    border-radius: 10px;
 }
 
 .contentTable {
@@ -25,6 +42,12 @@ tbody,th, tr {
     padding:20px;
     flex-wrap: wrap;
     
+}
+
+
+.combos {
+    height: 100%;
+    margin-right: 50px;
 }
 
 .tableShop {

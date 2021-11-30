@@ -100,6 +100,7 @@ export function Shop() {
       <div className='container-shop'>
       <Menu />
       <h1>Cofee Shopp</h1>
+      
       <div className="compra">
         <h2>amountTotal: {amountTotal}  </h2>
         
@@ -113,9 +114,38 @@ export function Shop() {
           carrito
         </Button>
       </div>
+      <div className='container-divs'>
+        <div className='carrito'>
+        <h3>Your shopping cart</h3>
+      {ShowTotal && (
+            <div className="shopping">
+                 
+                <Table  responsive="sm">
+                  <thead>
+                    <tr>
+                      <th>Shopping</th>
+                      <th>Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {listBuy.map((element) => (
+                      <tr>
+                        <th>{element.name}</th>
+                        <th>${element.price}</th>
+                      </tr>
+                    ))}
+                  
+                  </tbody>
+                </Table>
+                
+             
+            </div>
+          )}
+          </div>
       <div className="contentTable">
-        <div>
+        
           {" "}
+          <div className='combos'>
           <h2> Combos</h2>
           <Table responsive="sm">
             <thead>
@@ -144,32 +174,8 @@ export function Shop() {
               ))}
             </tbody>
           </Table>
-          {ShowTotal && (
-            <div className="shopping">
-                 <h3>Your shopping cart</h3>
-                <Table  responsive="sm">
-                  <thead>
-                    <tr>
-                      <th>Shopping</th>
-                      <th>Price</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {listBuy.map((element) => (
-                      <tr>
-                        <th>{element.name}</th>
-                        <th>${element.price}</th>
-                      </tr>
-                    ))}
-                  
-                  </tbody>
-                </Table>
-                
-             
-            </div>
-          )}
-        </div>
-
+          </div>
+          
         <div className="listStore">
           <h2>List Store</h2>
           <div className="tableShop">
@@ -233,6 +239,7 @@ export function Shop() {
 
          
         </div>
+      </div>
       </div>
       <Footer/>
       </div>
